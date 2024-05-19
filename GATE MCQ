@@ -1,0 +1,1765 @@
+GATE Questions on C Programming
+struct node
+{
+
+int i;
+
+float j;
+
+};
+
+struct node *s[10];
+
+The above C declaration defines
+
+GATE CSE 2000
+
+An array, each element of which is pointer to a structure of type node
+A structure of 2 fields, each field being a pointer to an array of 10 elements
+A structure of 3 fields: an integer, a float, and an array of 10 elements
+An array, each element of which is a structure of type node
+Answer (a)
+
+The number of tokens in
+printf(“i = %d, &i – %x”, i, &i);
+
+GATE CSE 2000
+
+3
+10
+25
+22
+Answer (b)
+
+Assume that objects of the type short, float and long occupy 2 bytes, 4 bytes and 8 bytes, respectively. The memory requirement for variable t, ignoring alignment
+GATE CSE 2000
+
+struct {
+
+short s [5];
+
+union {
+
+float y;
+
+long z;
+
+}u;
+
+} t;
+
+22 bytes
+18 bytes
+14 bytes
+10 bytes
+Answer (b)
+
+Consider the given three C functions:
+[P1] int * g (void)
+{
+
+int x = 10;
+
+return (&x);
+
+}
+
+[P2] int * g (void)
+{
+
+int * px;
+
+*px = 10;
+
+return px;
+
+}
+
+[P3] int * g (void)
+{
+
+int * px
+
+px = (int *) malloc (sizeof(int));
+
+*px = 10;
+
+return px;
+
+}
+
+Which of the above three functions are likely to cause problems?
+
+GATE CSE 2001
+
+Only P1 and P2
+Only P3
+Only P1 and P3
+P1, P2, and P3
+Answer (a)
+
+What does the given program print?
+char c[ ] = “GATE2011”
+
+char *p = c;
+
+printf (“%s”, p + p[3] – p[1]);
+
+GATE CSE 2011
+
+GATE 2011
+2011
+E2011
+011
+Answer (b)
+
+The output of the following C program is__________
+GATE CSE 2015 Set 1
+
+void f1(int a, int b) {
+
+int c;
+
+c=a; a=b; b=c;
+
+}
+
+void f2(int *a, int *b) {
+
+int c;
+
+c=*a; *a=*b; *b=c;
+
+}
+
+int main(){
+
+int a=4, b=5, c=6;
+
+f1(a,b);
+
+f2(&b, &c);
+
+printf(“%d”,c-a-b);
+
+}
+
+-5
+6
+-6
+0
+Answer (a)
+
+The following program prints ___________
+#include < stdio.h >
+
+void f (int *p, int *q) {
+
+p = q;
+
+*p = 2;
+
+}
+
+int i = 0, j = 1;
+
+int main ( ){
+
+f(&i, &j);
+
+printf (“%d %d \ n”, i, j);
+
+return 0;
+
+}
+
+GATE CSE 2010
+
+2 2
+2 1
+0 1
+0 2
+Answer (d)
+
+Consider the following C program
+void f(int, short);
+
+void main()
+
+{
+
+int i = 100;
+
+short s = 12;
+
+short *p = &s;
+
+__________ ; // call to f()
+
+}
+
+Which one of the following expressions, when placed in the blank above, will NOT result in a type checking error?
+
+GATE CSE 2016 Set 1
+
+f(s,*s)
+i = f(i,s)
+f(i,*s)
+f(i,*p)
+Answer (d)
+
+The output of the following C program is
+                                                            GATE CSE 2018
+
+#include< stdio.h >
+
+struct Ournode{
+
+char x,y,z;
+
+};
+
+int main(){
+
+struct Ournode p = {‘1’, ‘0’, ‘a’+2};
+
+struct Ournode *q = &p;
+
+printf (“%c, %c”, *((char*)q+1), *((char*)q+2));
+
+return 0;
+
+}
+
+0, c
+0, a+2
+‘0’, ‘a+2’
+‘0’,’c’
+Answer (a)
+
+The output of the following C program is
+#include < stdio.h >
+
+void mystery(int *ptra, int *ptrb) {
+
+int *temp;
+
+temp = ptrb;
+
+ptrb = ptra;
+
+ptra = temp;
+
+}
+
+int main() {
+
+int a=2016, b=0, c=4, d=42;
+
+mystery(&a, &b);
+
+if (a < c)
+
+mystery(&c, &a);
+
+mystery(&a, &d);
+
+printf(“%d\n”, a);
+
+}
+
+GATE CSE 2016 Set 1
+
+2016
+2018
+016
+16
+Answer (a)
+
+The output of the following C program is
+#include < stdio.h >
+
+int main () {
+
+int arr [] = {1,2,3,4,5,6,7,8,9,0,1,2,5}, *ip = arr+4;
+
+printf (“%d\n”, ip[1]);
+
+return 0;
+
+}
+
+GATE CSE 2019
+
+6
+5
+66
+0
+Answer (a)
+
+The most appropriate matching for the following pairs
+X: m=malloc(5); m= NULL;
+
+Y: free(n); n->value = 5;
+
+Z: char *p; *p=’a’;
+
+1: using dangling
+
+2: using uninitialized pointers
+
+3. lost memory
+
+is:
+
+GATE CSE 2000
+
+X-1 Y-3 Z-2
+X-2 Y-1 Z-3
+X-3 Y-2 Z-1
+X-3 Y-1 Z-2
+Answer (d)
+
+Consider the following C function
+                                                            GATE CSE 2004
+
+void swap (int a, int b)
+
+{
+
+int temp;
+
+temp = a;
+
+a = b;
+
+b = temp;
+
+}
+
+In order to exchange the values of two variables x and y
+
+call swap (x,y)
+call swap (&x, &y)
+swap (x, y) cannot be used as it does return any value
+swap (x,y) cannot be used as the parameters are passed by value
+Answer (d)
+
+Assume the following C variable declaration
+int * A[10], B[10][10];
+
+Of the following expressions
+
+I. A[2]
+
+II. A[2] [3]
+
+III. B[1]
+
+IV. B[2] [3]
+
+Which will not give compile-time errors if used as left-hand sides of assignment statements in a C program?
+
+GATE CSE 2003
+
+I, II and IV
+II, III and IV
+II and IV
+IV only
+Answer (a)
+
+In the C language
+a) At most one activation record exists between the current activation record and the activation record for the main
+
+b) The number of activation records between the current activation record and the activation record for the main depends on the actual function calling sequence.
+
+c) The visibility of global variables depends on the actual function calling sequence.
+
+d) Recursion requires the activation record for the recursive function to be saved on a different stack before the recursive function can be called.
+
+GATE CS 2002
+
+There is no such restriction in C language
+True
+False. In C, variables are statically scoped, not dynamically
+False. The activation records are stored on the same stack
+Answer (b)
+
+
+Consider the following C program:
+#include <stdio.h>
+
+int jumble(int x, int y){
+
+x=2*x+y;
+
+return x;
+
+}
+
+int main(){ 
+
+int x=2, y=5;
+
+y=jumble(y,x);
+
+x=jumble(y,x);
+
+printf(“%d \n”, x);
+
+return 0;
+
+}
+
+The value printed by the program is _____
+
+(GATE 2019)
+
+26
+25
+20
+0
+Answer (a)
+
+
+Consider the following C program:
+ 
+
+#include <stdio.h>
+
+ 
+
+int main(){ 
+
+ 
+
+int arr[]={1,2,3,4,5,6,7,8,9,0,1,2,5}, *ip=arr+4;
+
+ 
+
+printf(“%d\n”, ip[1]);
+
+ 
+
+return 0;
+
+ 
+
+} 
+
+The number that will be displayed on execution of the program is _______
+
+(GATE 2019)
+
+6
+7
+8
+0
+Answer (a)
+
+
+Consider the following C function.
+ 
+
+void convert(int n){ 
+
+if(n<0)
+
+     printf(“%d”,n);
+
+else {
+
+         convert(n/2);
+
+         printf(“%d”,n%2);
+
+}
+
+}
+
+ 
+
+Which one of the following will happen when the function convert is called with any positive integer n as an argument?
+
+(GATE 2019)
+
+It will print the binary representation of n and terminate
+It will print the binary representation of n in the reverse order and terminate
+It will print the binary representation of n but will not terminate
+It will not print anything and will not terminate
+Answer (d)
+
+
+Consider the following C program:
+#include <stdio.h>
+
+int r(){
+
+static int num=7;
+
+return num–;
+
+}
+
+int main(){
+
+for (r();r();r())
+
+printf(“%d”,r());
+
+return 0;
+
+}
+
+Which one of the following values will be displayed on execution of the programs?
+
+(GATE 2019)
+
+41
+52
+63
+630
+Answer (b)
+
+
+Consider the following C program:
+#include <stdio.h> 
+
+int main(){
+
+float sum = 0.0, j = 1.0, i = 2.0; 
+
+while (i/j > 0.0625){
+
+j = j + j;
+
+sum = sum + i/j;
+
+printf(“%f\n”, sum);
+
+}
+
+return 0;
+
+}
+
+The number of times the variable sum will be printed, when the above program is executed, is _________
+
+(GATE 2019)
+
+0
+5
+1
+None of the above
+Answer (b)
+
+
+Consider the following C program:
+#include <stdio.h>
+
+int main()
+
+{
+
+int a[ ] = {2, 4, 6, 8, 10};
+
+int i, sum = 0, *b = a + 4;
+
+for (i = 0; i < 5; i++)
+
+sum = sum + (*b – i) – *(b – i);
+
+printf (“%d\n”, sum);
+
+return 0;
+
+}
+
+The output of the above C program is ______
+
+(GATE 2019)
+
+10
+12
+15
+20
+Answer (a)
+
+
+Consider the following C program:
+ 
+
+#include<stdio.h>
+
+ 
+
+void fun1(char *s1, char *s2){
+
+     char *tmp;
+
+     tmp = s1;
+
+     s1 = s2;
+
+     s2 = tmp;
+
+}
+
+void fun2(char **s1, char **s2){
+
+     char *tmp;
+
+     tmp = *s1;
+
+     *s1 = *s2;
+
+     *s2 = tmp;
+
+}
+
+int main(){
+
+    char *str1 = “Hi”, *str2 = “Bye”;
+
+    fun1(str1, str2); printf(“%s %s “, str1, str2);
+
+    fun2(&str1, &str2); printf(“%s %s”, str1, str2);
+
+    return 0;
+
+}
+
+The output of the program above is
+
+(GATE 2018)
+
+Hi Bye Bye Hi
+Hi Bye Hi Bye
+Bye Hi Hi Bye
+Bye Hi Bye Hi
+Answer (a)
+
+
+Consider the following C code. Assume that unsigned long int type length is 64 bits.
+ 
+
+unsigned long int fun(unsigned long int n){
+
+    unsigned long int i, j = 0, sum = 0;
+
+    for (i = n; i > 1; i = i/2) j++;
+
+    for ( ; j > 1; j = j/2) sum++;
+
+    return(sum);
+
+}
+
+ 
+
+The value returned when we call fun with the input 240 is
+
+(GATE 2018)
+
+4
+5
+6
+40
+Answer (a)
+
+
+Consider the following C program
+#include <stdio.h>
+
+#include <string.h>
+
+ 
+
+void printlength (char *s, char *t) {
+
+   unsigned int c=0;
+
+   int len = ((strlen(s) – strlen(t)) > c) ? strlen(s): strlen(t);
+
+   printf(“%d\n”,len);
+
+}
+
+ 
+
+void main () {
+
+   char *x = “abc”,
+
+   char *y = “defgh”;
+
+   printlength (x,y);
+
+}
+
+Recall that strlen is defined in string. h as returning a value of type size_t, which is an unsigned int. The output of the program is _____
+
+(GATE 2017)
+
+3
+5
+7
+9
+Answer (a)
+
+
+The output of executing the following C program is ____________ .
+ 
+
+#include <stdio.h>
+
+ 
+
+int total (int v) {
+
+   static int count = 0;
+
+   while(v) {
+
+      count += v&1;
+
+      v >>= 1;
+
+   }
+
+   return count ;
+
+}
+
+ 
+
+void main () {
+
+    static int x = 0;
+
+    int i =5;
+
+    for (; i>0;i–) {
+
+        x=x+total(i);
+
+    }
+
+    printf(“%d\n”,x);
+
+}
+
+(GATE 2017)
+
+23
+25
+27
+29
+Answer (a)
+
+
+Consider the following function implemented in C:
+void printxy(int x, int y) {
+
+    int *ptr;
+
+    x=0;
+
+    ptr=&x;
+
+    y=*ptr;
+
+    *ptr=1;
+
+    printf(“%d, %d”, x, y);
+
+}
+
+The output of invoking printxy(1,1) is
+
+(GATE 2017)
+
+0, 0
+0, 1
+1, 0
+1, 1
+Answer (c)
+
+
+Consider the C program fragment below which is meant to divide x by y using repeated subtraction. The variables x, y, q and r are all unsigned int.
+while (r >=y) {
+
+  r = r – y;
+
+  q = q + 1;
+
+}
+
+Which of the  following condition on the variables x, y, q and r before the execution of the fragment will ensure that the loop terminates in a state satisfying the condition x == (y*q + r)?
+
+(GATE 2017)
+
+(q == r)  && (r == 0)
+(x > 0) && (r == x) && (y > 0)
+(q == 0) && (r == x) && (y > 0)
+(q == 0) && (y > 0)
+Answer (c)
+
+
+Consider the following snippet of a C program. Assume that swap(&x, &y) exchanges the contents of x and y.
+ 
+
+int main () {
+
+      int array[] = {3,5,1,4,6,2};
+
+      int done = 0;
+
+      int i;
+
+ 
+
+      while  (done == 0) {
+
+             done = 1;
+
+             for (i = 0, i<=4; i++) {
+
+                   if (array[i]< array[i+1]) {
+
+                        swap (&array[i], &array[i+1]);
+
+                        done = 0;
+
+                   }   
+
+             }
+
+             for (i=5; i>=1; i–) {
+
+                  if (array[i] > array [i-1]) {
+
+                       swap(&array[i], &array[i-1]);
+
+                       done = 0;
+
+                  }
+
+             }
+
+             printf(“%d”, array[3]);
+
+}
+
+The output of the program is ______
+
+(GATE 2017)
+
+3
+4
+5
+6
+Answer (a)
+
+
+Consider the following C program.
+ 
+
+#include<stdio.h>
+
+int main () {
+
+          int m = 10;
+
+          int n, nl;
+
+          n = ++m;
+
+          n1 = m++;
+
+          n–;
+
+          –n1;
+
+          n-= n1;
+
+          printf (“%d”,n),
+
+          return 0;
+
+}
+
+The output of the program is _________
+
+(GATE 2017)
+
+0
+1
+5
+None of the above
+Answer (a)
+
+
+What will be the output of the following C program?
+ 
+
+void count(int n){
+
+  static int d=1;
+
+      printf(“%d “, n);
+
+      printf(“%d “, d);
+
+      d++;
+
+      if(n>1) count(n-1);
+
+      printf(“%d “, d);
+
+   }
+
+ 
+
+   void main(){ 
+
+      count(3);
+
+   }
+
+(GATE 2016)
+
+3 1 2 2 1 3 4 4 4
+3 1 2 1 1 1 2 2 2
+3 1 2 2 1 3 4 
+3 1 2 1 1 1 2
+Answer (a)
+GATE-2000
+
+1. The number of tokens in the following C statement is?
+
+printf("i = %d, &i = %x", i, &i);
+(a) 3 (b) 26 (c) 10 (d) 21
+
+Answer: (c)
+
+GATE-2012
+
+2. What will be the output of the following C program segment?
+
+char inchar = 'A';
+switch (inchar)
+{
+case 'A' :
+printf ("choice A \n") ;
+case 'B' :
+printf ("choice B ") ;
+case 'C' :
+case 'D' :
+case 'E' :
+default:
+printf ("No Choice") ;
+}
+(a) No choice
+
+(b) Choice A
+
+(c) Choice A Choice B No choice
+
+(d) Program gives no output as it is erroneous
+
+Answer: (c)
+
+GATE-1999
+
+3. Consider the following C function definition:
+
+int Trial (int a, int b, int c)
+{
+if ((a > = b) && (c < b)) return b;
+else if (a > = b) return Trial (a,c,b);
+else return Trial (b,a,c);
+}
+The function Trial:
+
+(a) Finds the maximum of a, b, and c
+
+(b) Finds the minimum of a, b and c
+
+(c) Finds the middle number of a, b, c
+
+(d) None of the above
+
+Answer: (c)
+
+GATE CS 2000
+
+4. The value of j at the end of the execution of the following C program.
+
+int incr (int i)
+{
+static int count = 0;
+count = count + i;
+return (count);
+}
+main ()
+{
+int i,j;
+for (i = 0; i <=4; i++)
+j = incr(i);
+}
+(a) 10 (b) 4 (c)6 (d) 7
+
+Answer: (a)
+
+GATE CS 2002
+
+5. Consider the following declaration of a ‘two-dimensional array in C:
+
+char a[100][100];
+Assuming that the main memory is byte-addressable and that the array is stored starting from memory address 0, the address of a[40][50] is
+
+(a) 4040 (b) 4050 (c) 5040 (d) 5050
+
+Answer: (b)
+
+GATE CS 2005
+
+6. Consider the following C-program:
+
+void foo(int n, int sum)
+{
+int k = 0, j = 0;
+if (n == 0) return;
+k = n % 10; j = n / 10;
+sum = sum + k;
+foo (j, sum);
+printf ("%d,", k);
+}
+int main ()
+{
+int a = 2048, sum = 0;
+foo (a, sum);
+printf ("%d\n", sum);
+getchar();
+}
+What does the above program print?
+
+(a) 8, 4, 0, 2, 14
+
+(b) 8, 4, 0, 2, 0
+
+(c) 2, 0, 4, 8, 14
+
+(d) 2, 0, 4, 8, 0
+
+Answer: (d)
+
+GATE CS 2004
+
+7. Consider the following C function:
+
+int f(int n)
+{
+static int i = 1;
+if (n >= 5)
+return n;
+n = n+i;
+i++;
+return f(n);
+}
+The value returned by f(1) is
+
+(a) 5 (b) 6 (c) 7 (d) 8
+
+Answer: (c)
+
+GATE CS 2004
+
+8. Consider the following C program
+
+void main()
+{
+int x, y, m, n;
+scanf ("%d %d", &x, &y);
+/* x > 0 and y > 0 */
+m = x; n = y;
+while (m != n)
+{
+if(m>n)
+m = m - n;
+else
+n = n - m;
+}
+printf("%d", n);
+}
+The program computes
+
+(a) x + y using repeated subtraction
+
+(b) x mod y using repeated subtraction
+
+(c) the greatest common divisor of x & y
+
+(d) the least common multiple of x & y
+
+Answer: (c)
+
+GATE-2005
+
+9. Consider the following C-program:
+
+double foo (double); /* Line 1 */
+int main () {
+double da, db;
+// input da
+db = foo (da);
+}
+double foo (double a) {
+return a;
+}
+The above code compiled without any error or warning. If Line 1 is deleted, the above code will show:
+
+(a) no compile warning or error
+
+(b) some compiler-warnings not leading to unintended results
+
+(c) some compiler-warnings due to type-mismatch eventually leading to unintended results
+
+(d) compiler errors
+
+Answer: (d)
+
+GATE-2005
+
+10. Consider line number 3 of the following C-program.
+
+int main ( ) { /* Line 1 */
+int i, n; /* Line 2 */
+fro (i =0, i<n, i++); /* Line 3 */
+}
+Identify the compiler’s response about this line while creating the object-module:
+
+(a) No compilation error
+
+(b) Only a lexical error
+
+(c) Only syntactic errors
+
+(d) Both lexical and syntactic errors
+
+Answer: (c)
+
+GATE-2006
+
+11. Consider these two functions and two statements S1 and S2 about them.
+
+int work1(int *a, int i, int j)
+{
+int x = a[i+2];
+a[j] = x+1;
+return a[i+2] - 3;
+}
+int work2(int *a, int i, int j)
+{
+int t1 = i+2;
+int t2 = a[t1];
+a[j] = t2+1;
+return t2–3;
+}
+S1: The transformation from work1 to work2 is valid, i.e., for any program state and input arguments, work2 will compute the same output and have the same effect on program state as work1
+
+S2: All the transformations applied to work1 to get work2 will always improve the performance (i.e reduce CPU time) of work2 compared to work1
+
+(a) S1 is false and S2 is false
+
+(b) S1 is false and S2 is true
+
+(c) S1 is true and S2 is false
+
+(d) S1 is true and S2 is true
+
+Answer: (d)
+
+GATE — 2007
+
+12. Consider the following C function:
+
+int f(int n)
+{
+static int r = 0;
+if (n <= 0) return 1;
+if (n > 3)
+{
+r = n;
+return f(n-2)+2;
+}
+return f(n-1)+r;
+}
+What is the value of f(5) ?
+
+(a) 5 (b) 7 (c)9 (d) 18
+
+Answer: (d)
+
+GATE-2011
+
+Common data Questions (13 & 14)
+
+Consider the following recursive C function that takes two arguments
+
+unsigned int foo(unsigned int n, unsigned int r) {
+if (n > 0) return (n%r + foo (n/r, r ));
+else return 0;
+}
+13. What is the return value of the function foo when it is called as foo(345, 10) ?
+
+(a) 345 (b) 12 (c) 5 (d) 3
+
+Answer: (b)
+
+14. What is the return value of the function foo when it is called as foo(513, 2)?
+
+(a) 9 (b) 8 (c) 5 (d) 2
+
+Answer: (d)
+
+GATE-2008
+
+15. Choose the correct to fill ?1 and ?2 so that the program below prints an input string in reverse order. Assume that the input string is terminated by a newline character.
+
+void reverse(void)
+{
+int c;
+if (?_1) reverse() ;
+?_2
+}
+main()
+{
+printf ("Enter Text ") ; printf ("\n") ;
+reverse(); printf ("\n") ;
+}
+(a) ?1 is (getchar() != ‘\n’’) and ?2 is getchar(c);
+
+(b) ?1 is (c = getchar() ) != ‘\n’) and ?2 is getchar(c);
+
+(c) ?1 is (c != ’\n’) and ?2 is putchar(c);
+
+(d) ?1 is ((c = getchar()) != ‘\n’) and ?2 is putchar(c);
+
+Answer: (d)
+
+GATE-2000
+
+16. The following C declaration
+
+struct node
+{
+int i;
+float j;
+};
+struct node *s[10] ;
+define s to be
+
+(a) An array, each element of which is a pointer to a structure of type node
+
+(b) A structure of 2 fields, each field being a pointer to an array of 10 elements
+
+(c) A structure of 3 fields: an integer, a float, and an array of 10 elements
+
+(d) An array, each element of which is a structure of type node.
+
+Answer: (a)
+
+GATE-2000
+
+17. The most appropriate matching for the following pairs
+
+X: m=malloc(5); m= NULL; 1: using dangling pointers
+
+Y: free(n); n->value=5; 2: using uninitialized pointers
+
+Z: char *p; *p = ’a’; 3: lost memory
+
+is:
+
+(a) X — 1 Y — 3 Z-2
+
+(b) X — 2 Y — 1 Z-3
+
+(c) X — 3 Y — 2 Z-1
+
+(d) X — 3 Y — 1 Z-2
+
+Answer: (d)
+
+GATE CS 2000
+
+18. Consider the following C declaration
+
+struct {
+short s [5]
+union {
+float y;
+long z;
+}u;
+} t;
+Assume that objects of the type short, float and long occupy 2 bytes, 4 bytes and 8 bytes, respectively. The memory requirement for variable t, ignoring alignment considerations, is
+
+(a) 22 bytes (b) 14 bytes (c)18 bytes (d) 10 bytes
+
+Answer: (c)
+
+GATE CS 2003
+
+19. Assume the following C variable declaration
+
+int *A [10], B[10][10];
+Of the following expressions
+
+I. A[2]
+
+II. A[2][3]
+
+III. B[1]
+
+IV. B[2][3]
+
+which will not give compile-time errors if used as left hand sides of assignment statements in a C program?
+
+(a) I, II, and IV only
+
+(b) II, III, and IV only
+
+(c) II and IV only
+
+(d) IV only
+
+Answer: (a)
+
+GATE CS 2004
+
+20. Consider the following C function
+
+void swap (int a, int b)
+{
+int temp;
+temp = a;
+a = b;
+b = temp;
+}
+In order to exchange the values of two variables x and y.
+
+a) call swap (x, y)
+
+b) call swap (&x, &y)
+
+c) swap (x, y) cannot be used as it does not return any value
+
+d) swap (x, y) cannot be used as the parameters are passed by value
+
+Answer: (d)
+
+GATE-2005
+
+21. What does the following C-statement declare?
+
+int ( * f) (int * ) ;
+(a) A function that takes an integer pointer as argument and returns an integer
+
+(b) A function that takes an integer as argument and returns an integer pointer
+
+(c) A pointer to a function that takes an integer pointer as argument and returns an integer.
+
+(d) A function that takes an integer pointer as argument and returns a function pointer
+
+Answer: (c)
+
+GATE-2010
+
+22. What does the following program print?
+
+#include<stdio.h>
+void f(int *p, int *q)
+{
+p = q;
+*p = 2;
+}
+int i = 0, j = 1;
+int main()
+{
+f(&i, &j);
+printf("%d %d \n", i, j);
+getchar();
+return 0;
+}
+(a) 2 2 (b) 2 1 (c)0 1 (d) 0 2
+
+Answer: (d)
+
+GATE-2011
+
+23. What does the following fragment of C-program print?
+
+char c[] = "GATE2011";
+char *p =c;
+printf("%s", p + p[3] - p[1]);
+(a) GATE2011 (b) E2011 (c) 2011 (d) 011
+
+Answer: (c)
+
+GATE CS 2004
+
+24. Consider the following C program segment:
+
+char p[20];
+char *s = "string";
+int length = strlen(s);
+int i;
+for (i = 0; i < length; i++)
+p[i] = s[length - i];
+printf("%s",p);
+The output of the program is
+
+(a) gnirts
+
+(b) gnirt
+
+(c) string
+
+(d) no output is printed
+
+Answer: (d)
+
+GATE-2012
+
+Consider the following C program
+
+int a, b, c = 0;
+void prtFun (void);
+int main ()
+{
+static int a = 1; /* line 1 */
+prtFun();
+a += 1;
+prtFun();
+printf ( "\n %d %d " , a, b) ;
+}
+void prtFun (void)
+{
+static int a = 2; /* line 2 */
+int b = 1;
+a += ++b;
+printf (" \n %d %d " , a, b);
+}
+25. What output will be generated by the given code segment?
+
+(a) || (b) || © || (d)
+
+3 1 || 4 2 || 4 2 || 3 1
+
+4 1 || 6 1 || 6 2 || 5 2
+
+4 2 || 6 1 || 2 0 || 5 2
+
+Answer: (c)
+
+26. What output will be generated by the given code segment if:
+
+Line 1 is replaced by “auto int a = 1;
+
+Line 2 is replaced by “register int a = 2;
+
+(a) || (b) || (c) || (d)
+
+3 1 || 4 2 || 4 2 || 4 2
+
+4 1 || 6 1 || 6 2 || 4 2
+
+4 2 || 6 1 || 2 0 || 2 0
+
+Answer: (d)
+
+GATE-2008
+
+27. What is printed by the following C program?
+
+int f(int x, int *py, int **ppz)
+{
+int y, z;
+**ppz += 1;
+z = **ppz;
+*py += 2;
+y = *py;
+x += 3;
+return x + y + z;
+}
+void main()
+{
+int c, *b, **a;
+c = 4;
+b = &c;
+a = &b;
+printf( "%d", f(c,b,a));
+getchar();
+}
+(a) 18 (b) 19 (c) 21 (d) 22
+
+Answer: (b)
+
+GATE — 2015
+
+28. The output of the following C program is __________.
+
+#include <stdio.h>
+void f1(int a, int b)
+{
+int c;
+c=a; a=b; b=c;
+}
+void f2(int *a, int *b)
+{
+int c;
+c=*a; *a=*b;*b=c;
+}
+int main()
+{
+int a=4, b=5, c=6;
+f1 (a, b);
+f2 (&b, &c);
+printf("%d", c-a-b);
+}
+Answer: -5
+
+GATE — 2015
+
+29. What is the output of the following C code? Assume that the address of x is 2000 (in decimal) and an integer requires four bytes of memory.
+
+int main()
+{
+unsigned int x[4][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}};
+printf("%u,%u, %u", x+3, *(x+3),*(x+2)+3);
+}
+(a) 2036, 2036, 2036
+
+(b) 2012, 4, 2204
+
+(c) 2036, 10, 10
+
+(d) 2012, 4, 6
+
+Answer: (a)
+
+GATE — 2015
+
+30. Consider the following C function.
+
+int fun1 (int n)
+{
+int i, j, k, p, q = 0;
+for (i = 1; i<n; ++i)
+{
+p = 0;
+for (j=n; j>1; j=j/2)
+++p;
+for (k=1; k<p; k=k*2)
+++q;
+}
+return q;
+}
+Which one of the following most closely approximates the return value of the function fun1?
+
+(a) n³
+
+(b) n(log n)²
+
+(c) n log n
+
+(d) n log(log n)
+
+Answer: (d)
+
+GATE — 2015
+
+31. Consider the following C program segment.
+
+#include <stdio.h>
+int main( )
+{
+char s1[7] = "1234", *p;
+p = s1 + 2;
+*p = '0' ;
+printf ("%s", s1);
+}
+What will be printed by the program?
+
+(a) 12
+
+(b) 120400
+
+(c) 1204
+
+(d) 1034
+
+Answer: (c)
+
+GATE — 2015
+
+32. Consider the following C program.
+
+#include<stdio.h>
+int main( )
+{
+static int a[ ] = {10, 20, 30, 40, 50};
+static int *p[ ] = {a, a+3, a+4, a+1, a+2};
+int **ptr = p;
+ptr++;
+printf {"%d%d", ptr-p, **ptr};
+}
+The output of the program is _________.
+
+Answer: 140
+
+GATE-2015
+
+33. Consider the following recursive C function.
+
+void get (int n)
+{
+if (n < 1) return;
+get (n–1);
+get (n–3);
+printf ("%d", n);
+}
+If get(6) function is being called in main( ) then how many times will the get() function be invoked before returning to the main( )?
+
+(a) 15
+
+(b) 25
+
+(c) 35
+
+(d) 45
+
+Answerer: (b)
+
+GATE — 2015
+
+34. Consider the following C program:
+
+# include <stdio.h>
+int main( )
+{
+int i, j, k = 0;
+j = 2 * 3 / 4 + 2.0 / 5 + 8 / 5;
+k –= - j;
+for(i = 0; i < 5; i++)
+{
+switch(i + k)
+{
+case 1:
+case 2: printf("\n%d", i + k);
+case 3: printf("\n%d", i + k);
+default: printf("\n%d", i + k);
+}
+}
+return 0;
+}
+The number of times the printf statement is executed is __________.
+
+Answer: 10
+
+GATE — 2015
+
+35. Consider the following C program.
+
+#include<stdio.h>
+int f1(void);
+int f2(void);
+int f3(void);
+int x = 10;
+int main( )
+{
+int x = 1;
+x +=f1() + f2() + f3() + f2();
+printf("%d", x);
+return 0;
+}
+int f1() { int x = 25; x++; return x; }
+int f2() { static int x = 50; x++; return x; }
+int f3() { x *= 10; return x; }
+The output of the program is __________.
+
+Answer: 230
+
+GATE — 2015
+
+36. Consider the C program below.
+
+#include<stdio.h>
+int *A, stkTop;
+int stkFunc (int opcode, int val)
+{
+static int size=0, stkTop=0;
+switch (opcode)
+{
+case -1: size = val; break;
+case 0: if (stkTop < size) A[stkTop++] = val; break;
+default: if (stkTop) < return A[ - stkTop];
+}
+return –1;
+}
+int main()
+{
+int B[20]; A=B; stkTop = –1
+stkFunc(–1, 10);
+stkFunc(0, 5);
+stkFunc(0, 10);
+printf("%d\n", stkFunc (1, 0) + stkFunc (0, 0));
+}
+The output of the program is ___.
+
+Answer: 15
+
+GATE-2015
+
+37. Consider the following C function.
+
+int fun(int n)
+{
+int x=1, k;
+if (n==1) return x;
+for (k=1; k<n; ++k)
+x = x + fun (k) * fun (n - k);
+return x;
+}
+The return value of fun (5) is __.
+
+Answer: 51
+
+GATE — 2015
+
+38. Consider the following function written in the C programming language.
+
+void foo (char *a)
+{
+if (*a && *a != ` `)
+{
+foo (a+1);
+putchar (*a);
+}
+}
+The output of the above function on input “ABCD EFGH” is
+
+(a) ABCD EFGH
+
+(b) ABCD
+
+(c) HGFE DCBA
+
+(d) DCBA
+
+Answer: (d)
+
+
+
