@@ -4,98 +4,133 @@ a dollar symbol
 all of the above choices
 a special symbol other than underscore
 a digit
+
+answer: all of the above 
 2. _____ variable is initialized only once and remains into existence till the end of program?
 1 point
 register
 external
 static
 automatic
+
+answer:static
 3. In C, parameters are always 
 1 point
 Passed by reference
 Non-pointer variables are passed by value and pointers are passed by reference
 Passed by value
 Passed by value result
+
+answer:Non-pointer variables are passed by value and pointers are passed by reference
 4. In the below statement, ptr1 and ptr2 are uninitialized pointers to int i.e they are pointing to some random address that may or may not be valid address
 1 point
 True
 False
+
+answer:false
 5. is the NULL pointer same as an uninitialized pointer? 
 1 point
 False
 True
+
+answer:false
 6. A variable which is visible only in the function in which is defined, is called _______
 1 point
 auto variable
 local variable
 static variable
 external variable
+
+answer:local variable
 7.  Which are of the following is not a valid identifier? 
 2 points
 _examVar
 examVar
 $examVar
 1examVar
+
+answer: last two
 8. We use pointers in a C program because
 1 point
 Pointers allow different functions to share and modify their local variables
 To pass large structures so that complete copy of the structure can be avoided
 Pointers enable complex "linked date" data structures like linked lists and binary trees.
 All of the above
+
+answer:all
 9. C programs are converted into machine language with the help of _________
 1 point
 a compiler
 an Editor
 an operating system
 none of these
+
+answer:compiler
 10. A pointer variable can be
 1 point
 All of the answers
 Passed to a function as an argument
 Returned by a function
 Changed within function
+
+answer:all of them
 11. ___________ in programming language are used to make programs more readable by naming actions to be performed.
 1 point
 Special words
 Statements
 Operators
 Labels
+
+answer:special words
 12. Direct descendants of C alongside with itself do not allow subprogram nesting.
 1 point
 False, except C
 True for all
 True, except C
 False for all
+
+answer:true for all
+
 13. The scopes created by blocks, which could be nested in larger blocks, are treated exactly those created by subprograms.
 1 point
 It is a true sentence
 It is a false sentence
 Cannot be compared the two things
 It depends on the language
+
+answer:it is a true sentence.
 14. ______ can have ______ entry points, which are controlled by the ______ themselves
 1 point
 Coroutines, multiple, subroutines
 Coroutines, multiple, coroutines
 Subroutines, single, subroutines
 Subroutines, multiple, subtroutines
+
+answer:coroutines, multiple,coroutines
 15. Consider the following example: void func(int i, int j)
 1 point
 It is a subprogram header
 It is a subprogram protocol
 It is a subprogram profile
 It is a subprogram definition
+
+answer:it is a subprogram header.
 16. The ______ of a statement in a ______ language is the locally declared variables, plus the variables of all other variables of all other subprograms that are currently active.
 1 point
 referencing environment, static scoped
 referencing environment, dynamically scoped
 referencing block, dynamically scoped
 referencing block, static scoped
+
+answer:referencing environment, dynamically scoped
 17. In the below statement, ptr1 and ptr2 are uninitialized pointers to int i.e. they are pointing to some random address that may or may not be valid address.
 1 point
 True, because they are in the statement
 False, because they are different type variables.
 True, because they are not initialized
 False, because they are pointing to the null address
+
+answer:false , they are different types variable.
 18. Consider the following C function :
 void swap(int a, int b)
 {
@@ -110,18 +145,25 @@ swap(x, y) cannot be used as the parameters are passed by value
 swap(x, y) cannot be used as it does not return any value
 Call swap (x, y)
 Call swap(&x, &y)
+
+answer:swap(x, y) cannot be used as the parameters are passed by value
+
 19. Pure interpretation is often requires more space than compilation.
 1 point
 True, because there is the intermediate code generator
 True, because it translates programs into an intermediate form
 True, because e.g. the symbol table need to be available
 False, there is no need for more space
+
+answer:True, because e.g. the symbol table need to be available
 20. The name for a memory location that may hold date is ________
 1 point
 address
 variable
 pointer
 storage
+
+answer:variable
 21. Are there any difference between variable declaration and variable definition?
 1 point
 There's no difference between them
@@ -129,30 +171,40 @@ A declaration occurs once, but a definition may occur many times
 Both can occur multiple times, but a declaration must occur first
 A definition occurs once, but a declaration may occur many times
 Both can occur multiple times, but a definition must occur first
+
+answer:A definition occurs once, but a declaration may occur many times
 22. In order to support recursion for subprograms, local variables need to be _______
 1 point
 stack dynamic
 static
 heap dynamic
 implicit heap dynamic
+
+answer:stack dynamic
 23. Subprogram declarations provide the subprogam's ______ but ______ include their bodies.
 1 point
 profile, do
 protocol, do not
 protocol, do
 profile, do not
+
+answer:protocol, do not
 24. A _________ is a variable that is bound to a value only once
 1 point
 implicit heap dynamic variable
 named constant
 static variable
 literal constant
+
+answer:named constant
 25. Functional side effect _____________
 1 point
 need to be achieved as much as you can
 need to be detected by the interpreter and stop interpretation
 need to be avoided as much as you can
 need to be detected by the compiler and stop compilation
+
+answer:need to be avoided as much as you can
 26. The pseudocode below demonstrates a loop.
 The code segment is an example of which type of loop?
 
@@ -166,6 +218,8 @@ Statement-controlled loop
 Infinite loop
 Counter-controlled loop
 Event-controlled loop
+
+answer:Infinite loop
 27. The pseudocode below demonstrates a loop.
 The code segment is an example of which type of loop?
 num = 10
@@ -178,6 +232,8 @@ Counter-controlled loop
 Logically controlled loop
 Statement-controlled loop
 Infinite loop
+
+answer:Logically controlled loop
 28. Consider the following C-program:
 
 double foo (double);        /* line 1*/
@@ -200,6 +256,8 @@ some compiler-warning due to type-mismatch eventually leading to unintended resu
 no compile warning to error
 compiler errors
 some compiler-warnings not leading to unintended results
+
+answer:compiler errors
 29. What will be output of the following C code?
 (Take care of scopeing!)
 
@@ -219,6 +277,8 @@ Compilation error
 10 10 10 10 10
 0 1 2 3 4
 10 11 12 13 14
+
+answer:10 10 10 10 10
 30. What will be result of given code?
 
 main()
@@ -236,6 +296,8 @@ error because condition in for loop is must
 error because of two semicolon inside for loop
 error because of break inside for loop
 1 2 3 4 5
+
+answer:1 2 3 4 5
 31. Determine output:
 
 void main()
@@ -250,6 +312,8 @@ None of these
 1
 0
 10
+
+answer:0
 32. Output?
 
 int main()
@@ -266,6 +330,8 @@ int main()
 Compiler Error
 10
 Garbage Value
+
+answer:compiler error
 33. Output?
 
 int var = 20;
@@ -284,6 +350,8 @@ Compiler Error
 20
 Garbage Value
 10
+
+answer:20
 34. In the following program fragment, s2 will be executed if?
 
 if(a > b)
@@ -297,6 +365,8 @@ a > b and b <= c
 a <= b
 b <= c and a<= b
 b > c
+
+answer:a > b and b <= c
 35. In the following program fragment, a<= b will be printed if? 
 if(a > b)
           printf(" a > b ");
@@ -309,7 +379,9 @@ a < b
 a > b
 does not depend upon if condition
 a == b
-What will be output of the following program?
+
+answer:does not depend upon if condition
+36.What will be output of the following program?
 
 void main()
 {
@@ -323,7 +395,9 @@ void main()
 10
 7
 0
-output?
+
+answer:2
+37.output?
 
 void main() {
         int i = 2, j = 2
@@ -337,7 +411,9 @@ void main() {
 2
 4
 6
-Output?
+
+answer:1
+38.Output?
 
 void main()
 {
@@ -351,7 +427,9 @@ void main()
 5
 6
 7
-void main()
+
+answer:4
+39.void main()
 {
           int a=0; b=10
           if(a = 0)
@@ -367,7 +445,9 @@ void main()
 1 point
 true
 false
-Choose the correct answers -based on the C language
+
+answer:false
+40.Choose the correct answers -based on the C language
 Select one:  
 *
 1 point
@@ -375,7 +455,9 @@ IF is a valid identifier
 An identifier may end with an underscore
 An identifier may start with an underscore
 All of the answers
-What will be output of the following program?
+
+answer:all
+41.What will be output of the following program?
 
 void main()
 {
@@ -389,7 +471,9 @@ void main()
 7
 10
 0
-The following function computes the maximum value contained in an integer array p[] of size (n >= 1)
+answer:0
+
+42.The following function computes the maximum value contained in an integer array p[] of size (n >= 1)
 
 int max(int *p, int n)
 {
@@ -413,14 +497,18 @@ a != n
 b != 0
 b > (a + 1)
 a != b
-If we don't initialize a static array, what will be the elements set to?
+
+answer:a != b
+43.If we don't initialize a static array, what will be the elements set to?
 *
 1 point
 Character constant
 A floating point number
 0
 An undetermined value
-Consider the following C declaration
+
+answer:0
+44.Consider the following C declaration
 
 struct (
 short s[5];
@@ -437,7 +525,9 @@ Assume that the objects of the type short, float and long occupy 2 bytes, 4 byte
 18 bytes
 14 bytes
 10 bytes
-Output?
+
+answer:18
+45.Output?
 
 #include <stdio.h>
 #include <string.h>
@@ -456,7 +546,8 @@ SIX
 ZERO
 ZERO\0\SIX
 0
-#include <stdio.h>
+answer:SIX
+46.#include <stdio.h>
 void main() {
 int a = 100;
 if(a > 10)
@@ -473,3 +564,5 @@ A.B de villiers
 M.S Dhoni M.E.X Hussey A.B de villiers
 compilation error. More than one conditions are true
 None of the above
+
+answer:ms dhoni
