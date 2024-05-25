@@ -172,7 +172,7 @@ Both can occur multiple times, but a declaration must occur first
 A definition occurs once, but a declaration may occur many times
 Both can occur multiple times, but a definition must occur first
 
-answer:A definition occurs once, but a declaration may occur many times
+answer:A decleration occurs once, but a definition may occur many times
 22. In order to support recursion for subprograms, local variables need to be _______
 1 point
 stack dynamic
